@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certifications</title>
+  <link rel="stylesheet" href="style.css"> <!-- Link your main stylesheet here -->
+  <style>
+    /* Blue theme styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .title {
+      font-size: 2em;
+      color: #0056b3;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .certification-card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .certification-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .certification-title {
+      font-size: 1.5em;
+      color: #0056b3;
+      margin: 0;
+    }
+
+    .view-details-btn {
+      background-color: #0056b3;
+      color: #fff;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      font-size: 0.9em;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .view-details-btn:hover {
+      background-color: #004494;
+    }
+
+    .certification-description {
+      margin-top: 10px;
+      color: #555;
+    }
+
+    /* Modal styling for detailed view */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 600px;
+      text-align: left;
+    }
+
+    .modal-close {
+      float: right;
+      font-size: 1.5em;
+      color: #333;
+      cursor: pointer;
+    }
+
+    /* Styling for download certificate button */
+    .view-certificate-btn {
+      display: inline-block;
+      background-color: #28a745;
+      color: #fff;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      font-size: 0.9em;
+      cursor: pointer;
+      text-decoration: none;
+      margin-top: 10px;
+    }
+
+    .view-certificate-btn:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1 class="title">Certifications</h1>
+
+  <!-- Certification Cards -->
+  <div class="certification-card">
+    <div class="certification-header">
+      <h2 class="certification-title">Introduction to Android Development</h2>
+      <button class="view-details-btn" onclick="showModal('modal1')">View Details</button>
+    </div>
+    <p class="certification-description">Fundamentals of Android app development, including UI design and core Android components.</p>
+    <!-- View Certificate Button -->
+    <a href="./documents/coursera 1.pdf" target="_blank" class="view-certificate-btn">View Certificate</a>
+  </div>
+
+  <div class="certification-card">
+    <div class="certification-header">
+      <h2 class="certification-title">Version Control</h2>
+      <button class="view-details-btn" onclick="showModal('modal2')">View Details</button>
+    </div>
+    <p class="certification-description">A course covering Git, GitHub, and best practices in version control.</p>
+    <!-- View Certificate Button -->
+    <a href="./documents/coursera.2.pdf" target="_blank" class="view-certificate-btn">View Certificate</a>
+  </div>
+
+  <div class="certification-card">
+    <div class="certification-header">
+      <h2 class="certification-title">C Programming</h2>
+      <button class="view-details-btn" onclick="showModal('modal3')">View Details</button>
+    </div>
+    <p class="certification-description">Introduction to the C programming language, covering syntax, data structures, and algorithms.</p>
+    <!-- View Certificate Button -->
+    <a href="./documents/C programing (1).pdf" target="_blank" class="view-certificate-btn">View Certificate</a>
+  </div>
+
+  <div class="certification-card">
+    <div class="certification-header">
+      <h2 class="certification-title">Advanced C++ Programming</h2>
+      <button class="view-details-btn" onclick="showModal('modal4')">View Details</button>
+    </div>
+    <p class="certification-description">A deep dive into object-oriented programming and advanced C++ concepts.</p>
+    <!-- View Certificate Button -->
+    <a href="./documents/simplilearn.pdf" target="_blank" class="view-certificate-btn">View Certificate</a>
+  </div>
+
+  <div class="certification-card">
+    <div class="certification-header">
+      <h2 class="certification-title">SEO and Tracking</h2>
+      <button class="view-details-btn" onclick="showModal('modal5')">View Details</button>
+    </div>
+    <p class="certification-description">Course on SEO fundamentals and tracking techniques for digital marketing.</p>
+    <!-- View Certificate Button -->
+    <a href="./documents/ZENORA.SHRIDEEP.pdf" target="_blank" class="view-certificate-btn">View Certificate</a>
+  </div>
+
+  <div class="certification-card">
+    <div class="certification-header">
+      <h2 class="certification-title">Masterclass by Wscube Tech</h2>
+      <button class="view-details-btn" onclick="showModal('modal6')">View Details</button>
+    </div>
+    <p class="certification-description">A masterclass on data analytics, covering data visualization and statistical analysis.</p>
+    <!-- View Certificate Button -->
+    <a href="./documents/WS-cubetech.pdf" class="view-certificate-btn" target="_blank">View Certificate</a>
+  </div>
+</div>
+
+<!-- Modals for Each Certification -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeModal('modal1')">&times;</span>
+    <h2>Introduction to Android Development</h2>
+    <p>Covered fundamentals of Android app development, UI design, activities, intents, and core Android components.</p>
+  </div>
+</div>
+
+<div id="modal2" class="modal">
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeModal('modal2')">&times;</span>
+    <h2>Version Control</h2>
+    <p>Comprehensive training on Git and GitHub, including version control workflows, branching, and collaboration techniques.</p>
+  </div>
+</div>
+
+<div id="modal3" class="modal">
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeModal('modal3')">&times;</span>
+    <h2>C Programming</h2>
+    <p>Introduced to C programming language, data types, loops, functions, and memory management.</p>
+  </div>
+</div>
+
+<div id="modal4" class="modal">
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeModal('modal4')">&times;</span>
+    <h2>Advanced C++ Programming</h2>
+    <p>Covered advanced C++ concepts, including inheritance, polymorphism, templates, and the Standard Template Library (STL).</p>
+  </div>
+</div>
+
+<div id="modal5" class="modal">
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeModal('modal5')">&times;</span>
+    <h2>SEO and Tracking</h2>
+    <p>In-depth training on SEO strategies, keyword research, on-page optimization, and web analytics tools.</p>
+  </div>
+</div>
+
+<div id="modal6" class="modal">
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeModal('modal6')">&times;</span>
+    <h2>Masterclass by Wscube Tech</h2>
+    <p>Focused on data analytics, data visualization, and statistical techniques for insightful decision-making.</p>
+  </div>
+</div>
+
+ <script>
+    function showModal(modalId) {
+      document.getElementById(modalId).style.display = 'flex';
+    }
+  
+    function closeModal(modalId) {
+      document.getElementById(modalId).style.display = 'none';
+    }
+  </script>
+  
